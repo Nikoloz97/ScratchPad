@@ -1,9 +1,9 @@
 namespace LeetCodeTests
 {
-    public class UnitTest1
+    public class LC_Tests
     {
         [Fact]
-        public void Test1()
+        public void PaliTestOne()
         {
 
         }

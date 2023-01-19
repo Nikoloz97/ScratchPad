@@ -17,8 +17,14 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            Recursion rec = new Recursion();
-            rec.Factorial(5);
+            LeetCode lc = new LeetCode();
+
+            Console.WriteLine(lc.IsPalindrome(12345));
+            
+            Console.WriteLine(lc.IsPalindrome(121));
+            
+            Console.WriteLine(lc.IsPalindrome(-121));
+
         }
 
 
