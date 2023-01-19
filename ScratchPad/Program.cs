@@ -9,8 +9,9 @@ using System.Linq;
 namespace ScratchPad
 {
     // Roadmap: 
+    // W3 Schools: https://www.w3schools.com/cs/cs_class_members.php
     // Learning how to document classes/functions for intellisense: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
-
+    // Learn ASP.NET MVC: https://www.danylkoweb.com/StartHere
 
     class Program
     {
