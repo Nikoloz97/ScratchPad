@@ -8,64 +8,17 @@ using System.Linq;
 
 namespace ScratchPad
 {
-     class Program
+    // Roadmap: 
+    // Learning how to document classes/functions for intellisense: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
+
+
+    class Program
     {
-        string color;
-        int maxSpeed;
-        public string FullThrottle()
-        {
-            return "This car is going super fast!";
-        }
-        
          static void Main(string[] args)
         {
-            Program myProgram = new Program();
-            myProgram.color = "red";
-            myProgram.maxSpeed = 200;
-
-            Console.WriteLine(myProgram.FullThrottle());
+            Recursion rec = new Recursion();
+            rec.Factorial(5);
         }
-
-
-
-
-
-
-
-
-
-
-        // Fizzbuzz practice...
-
-     /*   public static void FizzBuzzFunction(int valueInput)
-        {
-            if (valueInput % 3 == 0 && valueInput % 5 == 0) {
-                Console.WriteLine("FizzBuzz");
-            }
-
-            else if (valueInput % 3 == 0)
-            {
-                Console.WriteLine("Fizz");
-            }
-
-            else if (valueInput % 5 == 0)
-            {
-                Console.WriteLine("Buzz");
-            }
-
-            else
-            {
-                Console.WriteLine(valueInput);
-            }
-        }
-
-        public static void Main(string[] args)
-        {
-            for (int i = 1; i <= 100; i++)
-            {
-                FizzBuzzFunction(i);
-            }
-        }*/
 
 
 

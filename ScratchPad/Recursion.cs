@@ -4,8 +4,37 @@ using System.Text;
 
 namespace ScratchPad
 {
+    /// <summary>
+    /// Class <c>Recursion</c> involves everything to do with recursion 
+    /// </summary>
     public class Recursion
     {
+
+        /// <summary>
+        /// Method <c>Factorial</c> returns a a factorial given a number <br/>
+        /// <example>
+        /// For example: <br/>
+        /// <code>
+        /// Recursion rec = new Recursion();
+        /// rec.Factorial(5);
+        /// </code>
+        /// Returns 120... <br/>
+        /// factorial(5) = return (5 x factorial(4)) <br/>
+        /// -> factorial(4) = return (4 x factorial(3)) <br/>
+        /// --> factorial(3) = return (3 x factorial(2)) <br/>
+        /// ---> factorial(2) = return (2 x factorial(1)) <br/>
+        /// ----> factorial(1) = return 1 <br/>
+        /// Now it reverses back up... <br/>
+        /// ---> factorial(2) = return (2 x 1) = 2 <br/>
+        /// --> facorial(3) = return (3 x 2) = 6 <br/>
+        /// -> factorial(4) = return (4 x 6) = 24 <br/>
+        /// factorial 5 = return 5 x 24 = 120 <br/>
+        /// </example>
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        /// 
+
         public int Factorial(int number)
         {
             if (number == 1) { return 1; }
@@ -13,21 +42,9 @@ namespace ScratchPad
         }
 
 
-        // factorial 5 = return (5 x factorial(4))
-        // -> factorial(4) = return (4 x factorial(3))
-        // --> factorial(3) = return (3 x factorial(2));
-        // ---> factorial(2) = return (2 x factorial(1));
+        
 
-        // ----> factorial(1) = return 1
-
-        // Now it reverses back up...
-
-        // ---> factorial(2) = return (2 x 1) = 2;
-        // --> facorial(3) = return (3 x 2) = 6;
-        // -> factorial(4) = return (4 x 6) = 24;
-        // factorial 5 = return 5 x 24 = 120;
-
-
+        
         public string ReverseWord(string Word)
         {
             if (Word.Length == 0) { return "";}
