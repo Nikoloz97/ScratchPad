@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace ScratchPad
+namespace ScratchPad.LeetCode
 {
-    /// <summary>
-    /// Class <c>LeetCode</c> Involves everything to do with leetcode functions
-    /// </summary>
-    internal class LeetCode
+    public class Palindrome
     {
         public bool IsPalindrome(int x)
         {
@@ -27,6 +23,8 @@ namespace ScratchPad
                 reversedX += stringX[i];
             }
 
+            // Check if reversed string == forward string
+
             if (reversedX == stringX)
             {
                 return true;
@@ -34,6 +32,5 @@ namespace ScratchPad
             return false;
 
         }
-
     }
 }
