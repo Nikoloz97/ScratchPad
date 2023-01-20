@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ScratchPad.LeetCode
 {
-    internal class MissingNumbs
+    public class MissingNumbs
     {
        
-        public int MissingNumber(int[] nums)
+        public int FindMissingNumber(int[] nums)
         {
             // Initialize max val
             int maxValue = nums[0];

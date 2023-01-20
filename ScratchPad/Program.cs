@@ -20,9 +20,7 @@ namespace ScratchPad
          static void Main(string[] args)
         {
 
-            MissingNumbs missingNumb = new MissingNumbs();
-
-            Console.WriteLine(missingNumb.FindMissingNumber(new int[] {0,1}));
+            
 
         }
 
