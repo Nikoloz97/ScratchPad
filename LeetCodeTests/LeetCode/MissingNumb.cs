@@ -2,7 +2,7 @@
 namespace Tests.LeetCode
 
 {
-    public class MissingNumb
+    public class MissingNumbTests
     {
         [Fact]
         public void FindNumberTestOne()

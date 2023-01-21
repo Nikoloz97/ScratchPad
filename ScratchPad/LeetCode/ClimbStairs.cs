@@ -12,16 +12,46 @@ namespace ScratchPad.LeetCode
         /// </summary>
         /// <param name="steps"></param>
         /// <returns> Number of steps</returns>
-        public int GetNumberOfWays(int steps)
+        public int NumberOfWays(int steps)
         {
-            // Create ways counter
-            // Always can do one step at a time, so start at 1
+            // Create counter
+            // Given one can always do one step at a time, start at 1
             int waysCounter = 1;
 
+            // Initialize twoStepPossibilities where it can substitute a one-step spot
+            int twoStepPoss = steps;
 
+            bool firstIteration = true;
 
+            while (steps >= 2)
+            {
+               
+                steps -= 2;
+
+                //in every iteration following first, as "one-steps" are combined into a two-step, twoStepPoss is reduced by two
+
+                if (!firstIteration)
+                {
+                    twoStepPoss -= 2;
+                    waysCounter += twoStepPoss;
+
+                }
+                else
+                {
+                    twoStepPoss--;
+                    waysCounter += twoStepPoss;
+                }
+
+                //set first iteration to false
+                firstIteration = false;
+               
+
+            }
+
+            return waysCounter;
 
 
         }
+
     }
 }

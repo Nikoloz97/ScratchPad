@@ -7,27 +7,63 @@ using ScratchPad.LeetCode;
 
 namespace Tests.LeetCode
 {
-    public class ClimbStairs
+    // Test class names = should NOT be the same name as the class you're testing against
+    public class ClimbStairsTests
     {
+       
         [Fact]
-        public void ClimbTestOne()
+        public void NumberOfWaysEven_One ()
         {
             ClimbStairs climbStairs = new ClimbStairs();
 
-            int result = climbStairs.GetNumberOfWays(2);
+            int result = climbStairs.NumberOfWays(2);
 
             Assert.Equal(2, result);
 
         }
 
         [Fact]
-        public void ClimbTestTwo()
+        public void NumberOfWaysEven_Two()
         {
             ClimbStairs climbStairs = new ClimbStairs();
 
-            int result = climbStairs.GetNumberOfWays(3);
+            int result = climbStairs.NumberOfWays(8);
+
+            Assert.Equal(17, result);
+        }
+
+        [Fact]
+        public void NumberOfWaysOdd_One()
+        {
+            ClimbStairs climbStairs = new ClimbStairs();
+
+            int result = climbStairs.NumberOfWays(3);
 
             Assert.Equal(3, result);
         }
+
+        // This is the correct test (rest are faulty)...
+        [Fact]
+        public void NumberOfWaysOdd_Two()
+        {
+            ClimbStairs climbStairs = new ClimbStairs();
+
+            int result = climbStairs.NumberOfWays(5);
+
+            Assert.Equal(8, result);
+        }
+
+        [Fact]
+        public void NumberOfWaysOdd_Three()
+        {
+            ClimbStairs climbStairs = new ClimbStairs();
+
+            int result = climbStairs.NumberOfWays(9);
+
+            Assert.Equal(21, result);
+        }
+
+
+
     }
 }

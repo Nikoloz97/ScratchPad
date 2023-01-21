@@ -2,7 +2,7 @@ using ScratchPad.LeetCode;
 namespace Tests.LeetCode
 
 {
-    public class LC_Tests
+    public class PaliTests
     {
         [Fact]
         public void PaliTestOne()
