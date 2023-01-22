@@ -29,7 +29,7 @@ namespace Tests.LeetCode
 
             int result = climbStairs.NumberOfWays(8);
 
-            Assert.Equal(17, result);
+            Assert.Equal(34, result);
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace Tests.LeetCode
 
             int result = climbStairs.NumberOfWays(9);
 
-            Assert.Equal(21, result);
+            Assert.Equal(55, result);
         }
 
 
