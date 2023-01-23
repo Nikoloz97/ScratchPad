@@ -14,13 +14,20 @@ namespace ScratchPad.LeetCode
         /// <returns> Number of steps</returns>
         public int NumberOfWays(int steps)
         {
+            // 5 -> theoretical = 8
             int first = 1;
             int second = 1;
-            while (steps-- > 0)
+
+            // e.g. steps = 5
+            while (steps-- > 0) // start at 5, not 4 - the decrement happens AFTER the while statement is evaluated
             {
+                // tmp = 1
                 int tmp = first;
+                // first = 1
                 first = second;
+                // second = 1 + 1 = 2
                 second = tmp + second;
+                // keep doing this - once steps = 1, first = 
             }
 
             return first;

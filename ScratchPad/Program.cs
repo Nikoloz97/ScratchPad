@@ -22,6 +22,9 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
+            ClimbStairs stairs = new ClimbStairs();
+
+            Console.WriteLine(stairs.NumberOfWays(5));
 
             
 
