@@ -10,6 +10,7 @@ namespace ScratchPad.Karvonen
         // class attributes
         int UserAge { get; set; }
         int UserHR { get; set; }
+        
 
         public static void WelcomeScreen()
         {
@@ -30,6 +31,22 @@ namespace ScratchPad.Karvonen
             Console.Write("Please enter your resting HR: ");
             UserHR = Int32.Parse(Console.ReadLine());
             return UserHR;
+        }
+
+
+        public static void IntensityHRDisplay()
+        {
+            Calc calc = new Calc();
+            Dictionary<int,int> intRateDict = calc.GenIntRateDict();
+
+            foreach (var item in intRateDict)
+            {
+                Console.WriteLine("----------------------------");
+                Console.WriteLine($"Intensity: {item.Key}%");
+                Console.WriteLine($"Target Heart Rate: {item.Value} BPM");
+                Console.WriteLine("----------------------------");
+
+            }
         }
 
 

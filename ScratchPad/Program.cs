@@ -24,20 +24,8 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            Calc calc = new Calc();
-
-            Dictionary <int, int> myDict = calc.GenIntRateDict();
-
-            foreach (var item in myDict)
-            {
-                Console.WriteLine($"Intensity: {item.Key} ");
-                Console.WriteLine($"Target Heart Rate: {item.Value}");
-
-            }
-
-
+            UI.IntensityHRDisplay();
         }
-
         }
 
 }
