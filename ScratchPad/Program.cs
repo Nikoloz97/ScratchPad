@@ -1,4 +1,6 @@
-﻿using ScratchPad.LeetCode;
+﻿using ScratchPad.Concepts.Lists;
+using ScratchPad.Karvonen;
+using ScratchPad.LeetCode;
 using System;
 // Allows you to create lists/arrays
 using System.Collections.Generic;
@@ -22,11 +24,17 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            ClimbStairs stairs = new ClimbStairs();
+            Calc calc = new Calc();
 
-            Console.WriteLine(stairs.NumberOfWays(5));
+            Dictionary <int, int> myDict = calc.GenIntRateDict();
 
-            
+            foreach (var item in myDict)
+            {
+                Console.WriteLine($"Intensity: {item.Key} ");
+                Console.WriteLine($"Target Heart Rate: {item.Value}");
+
+            }
+
 
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScratchPad
+namespace ScratchPad.Concepts
 {
     /// <summary>
     /// Class <c>Recursion</c> involves everything to do with recursion 
@@ -42,12 +42,12 @@ namespace ScratchPad
         }
 
 
-        
 
-        
+
+
         public string ReverseWord(string Word)
         {
-            if (Word.Length == 0) { return "";}
+            if (Word.Length == 0) { return ""; }
             return ReverseWord(Word.Substring(1)) + Word[0];
         }
 
@@ -69,7 +69,7 @@ namespace ScratchPad
         public int CountDown(int Value)
         {
 
-            if (Value == 0) 
+            if (Value == 0)
             {
                 Console.WriteLine(Value);
                 Console.WriteLine("Buhya");
@@ -77,7 +77,7 @@ namespace ScratchPad
             }
             Console.WriteLine(Value);
             return CountDown(Value - 1) + 1;
-            
+
         }
 
         // Countdown(3) = 2 + 1; -> 3
@@ -94,7 +94,7 @@ namespace ScratchPad
             }
             return Value + SumRange(Value - 1);
         }
-   
+
 
 
 
