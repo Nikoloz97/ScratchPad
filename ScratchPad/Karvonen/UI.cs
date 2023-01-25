@@ -5,6 +5,7 @@ using System.Text;
 namespace ScratchPad.Karvonen
 {
     // This is everything involving the user interface on the console application
+    // TODO: Create testing file for the calculations
     public class UI
     {
         // class attributes
