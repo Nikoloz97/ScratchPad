@@ -1,0 +1,45 @@
+POINTS PER GAME
+1, Luka Doncic, DAL,	33.8
+2, Joel Embiid, PHI,	33.6
+3, Jayson Tatum, BOS,	31.0
+4, Giannis Antetokounmpo, Mil, 30.9
+5, Shai Gilgeous-Alexander, OKC, 30.7
+
+
+REBOUNDS PER GAME
+1,	Domantas Sabonis,SAC,	12.5
+2,	Giannis Antetokounmpo,MIL,	11.9
+3,	Rudy Gobert,MIN,	11.6
+4,	Steven Adams,MEM,	11.5
+5,	Nikola Vucevic,CHI,	11.1
+
+ASSISTS PER GAME
+1,	Tyrese Haliburton,IND,	10.2
+2,	Nikola Jokic,DEN,	9.9
+2,	Trae Young,ATL,	9.9
+4,	Luka Doncic,DAL,	8.6
+5,	Darius Garland,CLE,	8.0
+
+
+BLOCKS PER GAME
+1,	Nic Claxton,BKN,	2.7
+2,	Brook Lopez,MIL,	2.5
+3,	Myles Turner,IND,	2.4
+4,	Walker Kessler,UTA,	1.9
+5,	Mitchell Robinson,NYK,	1.8
+
+FIELD GOAL PERCENTAGE
+1,	Nic Claxton,BKN,	73.3
+2,	Rudy Gobert,MIN,	67.8
+3,	Mason Plumlee,CHA,	66.6
+4,	Thomas Bryant,LAL,	63.9
+5,	Jakob Poeltl,SAS,	63.3
+
+STEALS PER GAME
+1,	O.G. Anunoby,TOR,	2.1
+2,	De'Anthony Melton,PHI,	1.9
+3,	Gary Trent Jr.,TOR,	1.8
+3,	Anthony Edwards,MIN,	1.8
+3,	Tyrese Haliburton,IND,	1.8
+
+

@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ScratchPad.NBATrivia
+{
+    internal class UI
+    {
+        // TODO: Create a multiple-choice trivia game 
+        // Upon running app, scans the txt file, and stores data into player object list
+        // When displaying multiple choice answers, they should be sorted by their last name alphabetically  
+        // https://www.youtube.com/watch?v=cST5TT3OFyg&ab_channel=IAmTimCorey
+
+    }
+}
