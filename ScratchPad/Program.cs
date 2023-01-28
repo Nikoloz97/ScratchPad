@@ -17,7 +17,9 @@ namespace ScratchPad
     // IComparer: https://www.tutorialsteacher.com/articles/sort-object-array-by-specific-property-in-csharp
     // Creating a GUI (using WPF): https://www.youtube.com/watch?v=UMc1HLyBHSQ&list=RDCMUCsvqVGtbbyHaMoevxPAq9Fg&start_radio=1&rv=UMc1HLyBHSQ&t=830&ab_channel=Simplilearn	
     // ASP.NET MVC: https://www.danylkoweb.com/StartHere
+    // Creating Web API with ASP.NET Core: https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio
     // .NET Web API, Entity Framework, CodeFirst Migration: https://www.youtube.com/watch?v=Fbf_ua2t6v4&ab_channel=PatrickGod
+
 
     // Other resources:
     // Fibonacci explained: https://www.youtube.com/watch?v=WrWFfzt3ayc&ab_channel=NickWhite
