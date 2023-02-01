@@ -8,7 +8,7 @@ namespace ScratchPad.Karvonen
     public class Calc
     {
         // Instantiate UI
-        readonly UI UI = new UI();
+        readonly UI ui = new UI();
 
         /// <summary>
         /// Generates target HR given age, restingHR, and intensity given following formula:  Target = (((220 - age) - resting) * intensity) + resting
@@ -32,8 +32,8 @@ namespace ScratchPad.Karvonen
         /// <returns> Dictionary <int,int> </returns>
         public Dictionary <int, int> GenIntRateDict()
         {
-            int age = UI.PromptAge();
-            int restingHR = UI.PromptHR();
+            int age = ui.PromptAge();
+            int restingHR = ui.PromptHR();
             double Intensity = 0.55;
 
             Dictionary<int, int> IntRateDict = new Dictionary<int, int>();

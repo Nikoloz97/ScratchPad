@@ -30,6 +30,9 @@ namespace ScratchPad
     // Random C# answers to problems: https://www.tutorialsteacher.com/articles/sort-object-array-by-specific-property-in-csharp
     // GforG: https://www.geeksforgeeks.org/c-sharp-tuple/
     // Brendan's Blog (C# Tips): https://brendoneus.com/category/Archives.html
+    // Integration tests in ASP.NET Core: https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0
+    // 
+
 
     class Program
     {

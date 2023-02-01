@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ScratchPad.Karvonen
 {
@@ -15,8 +16,11 @@ namespace ScratchPad.Karvonen
 
         public static void WelcomeScreen()
         {
-            Console.WriteLine("Welcome to the Karvonean Heart Rate Calculator!");
-
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("| Welcome to the Karvonean Heart Rate Calculator! |");
+            Console.WriteLine("---------------------------------------------------");
+            Thread.Sleep(3000);
+            Console.Clear();
         }
 
         public int PromptAge()
@@ -35,9 +39,10 @@ namespace ScratchPad.Karvonen
         }
 
 
-        public static void IntensityHRDisplay()
+        public static void RunHRIntensity()
         {
             Calc calc = new Calc();
+
             Dictionary<int,int> intRateDict = calc.GenIntRateDict();
 
             foreach (var item in intRateDict)
