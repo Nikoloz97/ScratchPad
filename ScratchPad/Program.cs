@@ -1,6 +1,7 @@
-﻿using ScratchPad.Concepts.Lists;
-using ScratchPad.Karvonen;
+﻿using ScratchPad.Karvonen;
 using ScratchPad.LeetCode;
+using ScratchPad.NBATrivia;
+using ScratchPad.WebGen;
 using System;
 // Allows you to create lists/arrays
 using System.Collections.Generic;
@@ -38,7 +39,18 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            UI_Main.MainMenu();
+
+           /* string ConnectionString_LeetCode = @"Data Source=c:\LeetCodeDB.db; Version=3;";*/
+
+          /*  LeetCode.SQL SQL = new SQL(ConnectionString_LeetCode);*/
+
+
+            Roman roman = new Roman();
+
+            roman.RomanToInt("III");
+
+
+           /* UI_Main.MainMenu();*/
             
         }
         }

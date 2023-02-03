@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ScratchPad.LeetCode
 {
-    internal class MaxArea
+    public class MaxArea
     {
         // https://leetcode.com/problems/container-with-most-water/
 

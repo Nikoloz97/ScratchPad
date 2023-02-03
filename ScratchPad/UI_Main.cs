@@ -17,6 +17,12 @@ namespace ScratchPad
             Console.WriteLine("4 - NBA Trivia");
             Console.WriteLine("5 - Exit");
             Console.WriteLine();
+
+            // Test to see if DB works
+            LeetCode.SQL sql = new LeetCode.SQL();
+            sql.WriteOutCitiesFromAddressTable();
+
+
             Console.Write("Your choice: ");
 
             int userInput = int.Parse(Console.ReadLine());
@@ -30,10 +36,11 @@ namespace ScratchPad
                     break;
                 case 2:
                     Console.Clear();
-                    LeetCode.UI.DisplayData();
+                   /* LeetCode.UI.DisplayData();*/
                     break;
                 case 3:
                     Console.Clear();
+                    break;
 
             }
 
