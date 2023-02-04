@@ -15,12 +15,38 @@ namespace ScratchPad.LeetCode
     
         public static void Run()
         {
-
+            // Welcome screen
             Console.WriteLine("Welcome to the table creator!");
-            Console.Write("What would you like your table to be called?");
-            string rawUserInput = Console.ReadLine();
+            Console.WriteLine("For now, you can create two tables, each with two columns, in which each contain two values");
 
-            
+            // Prompt for table name
+            Console.Write("What would you like your table to be called?");
+            string TableName = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Clear();
+
+            // Prompt for column one + values
+            Console.Write("Column one's name?");
+            string col1 = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Write("Column one's value one?");
+            string col1_Val1 = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Write("Column one's value two?");
+            string col1_Val2 = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Clear();
+
+            // Prompt for column two + values
+            Console.Write("Column two's name?");
+            string columnTwo = UI_Helper.ProperUserInput_String(Console.ReadLine());
+
+
+
+
+
+
+
+
+            // Place string variables as parameters in functions below
+
+
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();
             CreateTable(sqlite_conn);

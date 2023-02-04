@@ -25,9 +25,34 @@ namespace ScratchPad.LeetCode
 
             string rawUserInput = Console.ReadLine();
 
-            UI_Helper.ProperUserInput_Integer(rawUserInput, 6);
+            int UserInput = UI_Helper.ProperUserInput_Integer(rawUserInput, 6);
+
+            switch (UserInput)
+            {
+                case 1:
+                    Console.Clear();
+                    break;
+                case 2:
+                    Console.Clear();
+                    break;
+                case 3:
+                    Console.Clear();
+                    break;
+                case 4:
+                    Console.Clear();
+                    break;
+                case 5:
+                    Console.Clear();
+                    break;
+                case 6:
+                    Console.Clear();
+                    TableCreator.Run();
+                    break;
+            }
 
 
         }
+
+
     }
 }
