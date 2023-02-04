@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ScratchPad.LeetCode
 {
@@ -10,7 +12,7 @@ namespace ScratchPad.LeetCode
     // TODO-2: Create function that allows user to populate person/address tables with values, then perform sql query (see MSSQL file)  
     public class SQL
     {
-        private readonly string connectionString;
+    
 
         // Constructor 1 (dependency injection - see program file)
         public SQL(string connectionString)

@@ -21,7 +21,7 @@ namespace ScratchPad.LeetCode
                 char current = romanVal[i];
 
                 // If we're at the last value, convert char -> int as is
-                if (current == romanVal.Length - 1)
+                if (i == romanVal.Length - 1)
                 {
                     if (current == 'I')
                     {
@@ -56,13 +56,12 @@ namespace ScratchPad.LeetCode
 
                     if (current == 'M')
                     {
-                        romanNum += 10000;
+                        romanNum += 1000;
                     }
 
                     return romanNum;
 
                 }
-
 
                 char next = romanVal[i + 1];
 

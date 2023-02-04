@@ -19,7 +19,9 @@ namespace ScratchPad
             Console.WriteLine();
 
             // Test to see if DB works
-            LeetCode.SQL sql = new LeetCode.SQL();
+            string ConnectionString_LeetCode = @"Data Source=c:\LeetCodeDB.db; Version=3;";
+
+            LeetCode.SQL sql = new LeetCode.SQL(ConnectionString_LeetCode);
             sql.WriteOutCitiesFromAddressTable();
 
 

@@ -40,18 +40,12 @@ namespace ScratchPad
          static void Main(string[] args)
         {
 
-           /* string ConnectionString_LeetCode = @"Data Source=c:\LeetCodeDB.db; Version=3;";*/
-
-          /*  LeetCode.SQL SQL = new SQL(ConnectionString_LeetCode);*/
-
-
-            Roman roman = new Roman();
-
-            roman.RomanToInt("III");
-
-
-           /* UI_Main.MainMenu();*/
             
+
+
+
+            UI_Main.MainMenu();
+
         }
         }
 
