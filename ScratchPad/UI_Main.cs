@@ -25,12 +25,13 @@ namespace ScratchPad
             {
                 case 1:
                     Console.Clear();
+                    Karvonen.UI.Run();
                     Karvonen.UI.WelcomeScreen();
                     Karvonen.UI.RunHRIntensity();
                     break;
                 case 2:
                     Console.Clear();
-                   /* LeetCode.UI.DisplayData();*/
+                    LeetCode.UI.WelcomeScreen();
                     break;
                 case 3:
                     Console.Clear();

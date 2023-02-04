@@ -14,6 +14,14 @@ namespace ScratchPad.Karvonen
         int UserHR { get; set; }
         
 
+
+        public static void Run()
+        {
+            WelcomeScreen();
+            RunHRIntensity();
+        }
+
+
         public static void WelcomeScreen()
         {
             Console.WriteLine("---------------------------------------------------");
