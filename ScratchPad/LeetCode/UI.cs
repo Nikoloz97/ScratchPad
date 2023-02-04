@@ -25,8 +25,8 @@ namespace ScratchPad.LeetCode
 
             string rawUserInput = Console.ReadLine();
 
-            //TODO: Create function in UI_Helper that throws user input in while loop until get valid input (can be parsed and in-range) 
-            bool isParsed = int.TryParse(rawUserInput, out int UserInput);
+            UI_Helper.ProperUserInput_Integer(rawUserInput, 6);
+
 
         }
     }

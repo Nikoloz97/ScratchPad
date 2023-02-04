@@ -13,8 +13,12 @@ namespace ScratchPad.LeetCode
     public class TableCreator
     {
     
-        static void Run ()
+        public static void Run()
         {
+
+            Console.WriteLine("Welcome to the table creator!");
+            Console.WriteLine("What would you like your string");
+            
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();
             CreateTable(sqlite_conn);
@@ -22,7 +26,7 @@ namespace ScratchPad.LeetCode
             ReadData(sqlite_conn);
         }
 
-        static SQLiteConnection CreateConnection()
+        public static SQLiteConnection CreateConnection()
         {
 
             SQLiteConnection sqlite_conn;
