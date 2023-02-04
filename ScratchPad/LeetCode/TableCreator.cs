@@ -17,7 +17,9 @@ namespace ScratchPad.LeetCode
         {
 
             Console.WriteLine("Welcome to the table creator!");
-            Console.WriteLine("What would you like your string");
+            Console.Write("What would you like your table to be called?");
+            string rawUserInput = Console.ReadLine();
+
             
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();

@@ -37,5 +37,28 @@ namespace ScratchPad
 
 
         }
+
+        public static string ProperUserInput_String(string userInput)
+        {
+
+            while (true)
+            {
+                if (userInput == null)
+                {
+                    Console.WriteLine("You didn't put in anything. Try again");
+                }
+
+                else if (userInput == String.Empty)
+                {
+                    Console.WriteLine("You actually didn't put in anything. Try again");
+                }
+                else { return userInput; }
+
+            }
+
+
+
+
+        }
     }
 }
