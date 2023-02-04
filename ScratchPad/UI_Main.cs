@@ -17,14 +17,6 @@ namespace ScratchPad
             Console.WriteLine("4 - NBA Trivia");
             Console.WriteLine("5 - Exit");
             Console.WriteLine();
-
-            // Test to see if DB works
-            string ConnectionString_LeetCode = @"Data Source=c:\LeetCodeDB.db; Version=3;";
-
-            LeetCode.SQL sql = new LeetCode.SQL(ConnectionString_LeetCode);
-            sql.WriteOutCitiesFromAddressTable();
-
-
             Console.Write("Your choice: ");
 
             int userInput = int.Parse(Console.ReadLine());

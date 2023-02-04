@@ -14,35 +14,7 @@ namespace ScratchPad.LeetCode
     {
     
 
-        // Constructor 1 (dependency injection - see program file)
-        public SQL(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
-
-        // Constructor 2 (instantiation)
-        public SQL()
-        {
-
-        }
-
-        public void WriteOutCitiesFromAddressTable()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT city from Address", conn);
-
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    string currentCity = Convert.ToString(dr["city"]);
-                    Console.WriteLine(currentCity);
-                }
-            }
-                
-        }
+     
 
 
     }
