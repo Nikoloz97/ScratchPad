@@ -8,7 +8,6 @@ namespace ScratchPad.LeetCode.Models
     {
         public string Name { get; set; }
         public string ColName1 { get; set; }
-        public string 
         public string ColName2 { get; set; }
         }
         

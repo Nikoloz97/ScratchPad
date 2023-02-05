@@ -17,41 +17,44 @@ namespace ScratchPad.LeetCode
         {
             // Welcome screen
             Console.WriteLine("Welcome to the table creator!");
-            Console.WriteLine("For now, you can create two tables, each with two columns, in which each contain two values");
+            Console.WriteLine("For now, you can create one table, with two columns, in which each contain two values");
 
             // Prompt for table name
             Console.Write("What would you like your table to be called?");
-            string TableName = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            string tableName = UI_Helper.ProperUserInput_String(Console.ReadLine());
             Console.Clear();
 
             // Prompt for column one + values
             Console.Write("Column one's name?");
-            string col1 = UI_Helper.ProperUserInput_String(Console.ReadLine());
-            Console.Write("Column one's value one?");
+            string col1Name = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Write("First value in column one?");
             string col1_Val1 = UI_Helper.ProperUserInput_String(Console.ReadLine());
-            Console.Write("Column one's value two?");
+            Console.Write("Second value in column one?");
             string col1_Val2 = UI_Helper.ProperUserInput_String(Console.ReadLine());
             Console.Clear();
 
             // Prompt for column two + values
             Console.Write("Column two's name?");
-            string columnTwo = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            string col2Name = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Write("First value in column two?");
+            string col2_Val1 = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Write("Second value in column two?");
+            string col2_Val2 = UI_Helper.ProperUserInput_String(Console.ReadLine());
+            Console.Clear();
 
 
 
-
-
-
-
-
-            // Place string variables as parameters in functions below
-
-
-            SQLiteConnection sqlite_conn;
-            sqlite_conn = CreateConnection();
-            CreateTable(sqlite_conn);
-            InsertData(sqlite_conn);
-            ReadData(sqlite_conn);
+           
+            Console.WriteLine("This is your table currently:");
+            // Open connection
+            SQLiteConnection sqlite_conn = CreateConnection();
+            // Create table
+            CreateTable(tableName, col1Name, col2Name, sqlite_conn);
+            // Insert column and row values
+            InsertData(tableName, col1Name, col2Name, col1_Val1, col1_Val2, col2_Val1, col2_Val2, sqlite_conn);
+            // Post table data row-by-row
+            // Close connection
+            ReadAndPostData(sqlite_conn);
         }
 
         public static SQLiteConnection CreateConnection()
@@ -73,40 +76,62 @@ namespace ScratchPad.LeetCode
         }
 
         //Creates custom table and columns 
-        static void CreateTable(string tableName, string column_one, string column_two, SQLiteConnection conn)
+        static void CreateTable(string tableName, string column1_Name, string column2_Name, SQLiteConnection conn)
         {
+            // How it was done in tutorial... 
 
-            SQLiteCommand sqlite_cmd;
-            string Createsql = "CREATE TABLE SampleTable (Col1 VARCHAR(20), Col2 INT)";
-            string Createsql1 = "CREATE TABLE SampleTable1 (Col1 VARCHAR(20), Col2 INT)";
+           /* SQLiteCommand sqlite_cmd;
+            string Createsql = "CREATE TABLE @tableName (Col1 VARCHAR(20), Col2 VARCHAR(20))";
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = Createsql;
+            sqlite_cmd.ExecuteNonQuery();*/
+
+
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            sqlite_cmd.CommandText = "CREATE TABLE @tableName (@columnOneName VARCHAR(20), @columnTwoName VARCHAR(20))";
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@tableName", tableName));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@columnOneName", column1_Name));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@columnTwoName", column2_Name));
             sqlite_cmd.ExecuteNonQuery();
-            sqlite_cmd.CommandText = Createsql1;
-            sqlite_cmd.ExecuteNonQuery();
+
 
         }
 
-        static void InsertData(SQLiteConnection conn)
+        static void InsertData(string tableName, string colOneName, string colTwoName, string colOneValOne, string colOneValTwo, string colTwoValOne, string colTwoValTwo, SQLiteConnection conn)
         {
-            SQLiteCommand sqlite_cmd;
+            // How it was done in tutorial...
+
+            /*SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test Text ', 1); ";
             sqlite_cmd.ExecuteNonQuery();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test1 Text1 ', 2); ";
             sqlite_cmd.ExecuteNonQuery();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test2 Text2 ', 3); ";
-            sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.ExecuteNonQuery();*/
 
 
-            sqlite_cmd.CommandText = "INSERT INTO SampleTable1 (Col1, Col2) VALUES('Test3 Text3 ', 3); ";
+
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            sqlite_cmd.CommandText = "INSERT INTO @tableName (@columnOneName, @columnTwoName) VALUES(@colOneValOne, @colTwoValOne); ";
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@tableName", tableName));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@colOneValOne", colOneValOne));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@colTwoValOne", colTwoValOne));
             sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.CommandText = "INSERT INTO @tableName  (@columnOneName, @columnTwoName) VALUES(@colOneValTwo, @colTwoValTwo); ";
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@tableName", tableName));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@colOneValTwo", colOneValTwo));
+            sqlite_cmd.Parameters.Add(new SQLiteParameter("@colTwoValTwo", colTwoValTwo));
+            sqlite_cmd.ExecuteNonQuery();
+
 
         }
 
-        static void ReadData(SQLiteConnection conn)
+        static void ReadAndPostData(SQLiteConnection conn)
         {
-            SQLiteDataReader sqlite_datareader;
+            // Original... 
+
+            /*SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = "SELECT * FROM SampleTable";
@@ -117,7 +142,24 @@ namespace ScratchPad.LeetCode
                 string myreader = sqlite_datareader.GetString(0);
                 Console.WriteLine(myreader);
             }
+            conn.Close();*/
+
+
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            sqlite_cmd.CommandText = "SELECT * FROM @TableName";
+
+
+            SQLiteDataReader sqlite_datareader = sqlite_cmd.ExecuteReader();
+            while (sqlite_datareader.Read())
+            {
+                string myreader = sqlite_datareader.GetString(0);
+                Console.WriteLine(myreader);
+            }
             conn.Close();
+
+
+
+
         }
 
     }
