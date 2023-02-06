@@ -22,6 +22,7 @@ namespace ScratchPad.LeetCode
             Console.WriteLine("4 - Palindrome");
             Console.WriteLine("5 - RomanNumeralConverter");
             Console.WriteLine("6 - TableCreator");
+            Console.WriteLine("7 - Letter Combinations");
 
             string rawUserInput = Console.ReadLine();
 
