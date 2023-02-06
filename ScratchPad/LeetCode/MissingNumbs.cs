@@ -5,6 +5,8 @@ using System.Text;
 
 namespace ScratchPad.LeetCode
 {
+    // Utilizes fibonacci sequence
+    // Fibonacci explained: https://www.youtube.com/watch?v=WrWFfzt3ayc&ab_channel=NickWhite
     public class MissingNumbs
     {
        

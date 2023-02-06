@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 namespace ScratchPad.LeetCode
 {
     // This is where various leetcode sql statements will be executed 
-    // TODO: ReadAndPostData() only returns values from one column
+
     // SQLite Series: https://www.youtube.com/watch?v=WeNk7Izp_HY&list=PLEKPb3_Ne8orC6DcnkGXtnvxNN97BCb4G&ab_channel=tips%27ntricks
+    // SQL Lite reference doc: https://www.sqlite.org/datatype3.html
     public class TableCreator
     {
-    
+        // TODO: ReadAndPostData() only returns values from one column
+
         public static void Run()
         {
             // Welcome screen
@@ -80,11 +82,11 @@ namespace ScratchPad.LeetCode
         {
             // Original... 
 
-            SQLiteCommand sqlite_cmd;
+           /* SQLiteCommand sqlite_cmd;
             string Createsql = "CREATE TABLE SampleTable (Col1 VARCHAR(20), Col2 VARCHAR(20))";
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = Createsql;
-            sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.ExecuteNonQuery();*/
 
 
             // Using command parameters (doesn't work)...
@@ -99,9 +101,9 @@ namespace ScratchPad.LeetCode
 
             // Using string concat (bad practice?)
 
-            /* SQLiteCommand sqlite_cmd = conn.CreateCommand();
-             sqlite_cmd.CommandText = $"CREATE TABLE {tableName} ({column1_Name} VARCHAR(20), {column2_Name} VARCHAR(20))";
-             sqlite_cmd.ExecuteNonQuery();*/
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            sqlite_cmd.CommandText = $"CREATE TABLE {tableName} ({column1_Name} VARCHAR(20), {column2_Name} VARCHAR(20))";
+            sqlite_cmd.ExecuteNonQuery();
 
 
         }
@@ -110,14 +112,14 @@ namespace ScratchPad.LeetCode
         {
             // Original...
 
-            SQLiteCommand sqlite_cmd;
+            /*SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test Text ', 1); ";
             sqlite_cmd.ExecuteNonQuery();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test1 Text1 ', 2); ";
             sqlite_cmd.ExecuteNonQuery();
             sqlite_cmd.CommandText = "INSERT INTO SampleTable (Col1, Col2) VALUES('Test2 Text2 ', 3); ";
-            sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.ExecuteNonQuery();*/
 
 
             // Using command parameters (doesn't work)...
@@ -141,12 +143,12 @@ namespace ScratchPad.LeetCode
 
 
 
-            /*SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
             // String values need to be surrounded by single ticks 
             sqlite_cmd.CommandText = $"INSERT INTO {tableName} ({colOneName}, {colTwoName}) VALUES('{colOneValOne}', '{colTwoValOne}'); ";
             sqlite_cmd.ExecuteNonQuery();
             sqlite_cmd.CommandText = $"INSERT INTO {tableName} ({colOneName}, {colTwoName}) VALUES('{colOneValTwo}', '{colTwoValTwo}'); ";
-            sqlite_cmd.ExecuteNonQuery();*/
+            sqlite_cmd.ExecuteNonQuery();
 
 
         }
@@ -155,7 +157,7 @@ namespace ScratchPad.LeetCode
         {
             // Original... 
 
-            SQLiteDataReader sqlite_datareader;
+            /*SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = "SELECT * FROM SampleTable";
@@ -166,14 +168,14 @@ namespace ScratchPad.LeetCode
                 string myreader = sqlite_datareader.GetString(0);
                 Console.WriteLine(myreader);
             }
-            conn.Close();
+            conn.Close();*/
 
 
-           /* SQLiteCommand sqlite_cmd = conn.CreateCommand();
+            SQLiteCommand sqlite_cmd = conn.CreateCommand();
 
             // Using command parameters (doesn't work)
-           *//* sqlite_cmd.CommandText = "SELECT * FROM @TableName";
-            sqlite_cmd.Parameters.AddWithValue("@TableName", tableName);*//*
+           /* sqlite_cmd.CommandText = "SELECT * FROM @TableName";
+            sqlite_cmd.Parameters.AddWithValue("@TableName", tableName);*/
 
 
 
@@ -188,8 +190,7 @@ namespace ScratchPad.LeetCode
                 string myreader = sqlite_datareader.GetString(0);
                 Console.WriteLine(myreader);
             }
-
-            conn.Close();*/
+            conn.Close();
 
 
 
