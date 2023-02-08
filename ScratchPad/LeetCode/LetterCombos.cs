@@ -27,7 +27,6 @@ namespace ScratchPad.LeetCode
 
         public IList<string> GetLetterCombinations(string digits) 
         {
-            IList<string> combinations = new List<string>();
 
             switch (digits.Length)
             {
@@ -43,7 +42,9 @@ namespace ScratchPad.LeetCode
                     return CombListCreator_4(digits);
             }
 
-            return combinations;
+          
+
+            return new List<string>();
 
         }
 
@@ -54,14 +55,11 @@ namespace ScratchPad.LeetCode
         {
             IList<string> combinationsList = new List<string>();
 
+            string buttonChars = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[0]).Value;
 
-            IEnumerable<string> enumButtonChars = from keyValue in phoneButtons where keyValue.Key == digits[0] select keyValue.Value;
-            string buttonChars = enumButtonChars.ToString();
-
-            foreach (var item in buttonChars)
+            foreach (char item in buttonChars)
             {
                 combinationsList.Add(item.ToString());
-
             }
             return combinationsList;
 
@@ -71,28 +69,26 @@ namespace ScratchPad.LeetCode
         {
             IList<string> combinationsList = new List<string>();
 
-            IEnumerable<string> enumButtonChars_1 = from keyValue in phoneButtons where keyValue.Key == digits[0] select keyValue.Value;
-            string buttonChars_1 = enumButtonChars_1.ToString();
+            string buttonChars_1 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[0]).Value;
 
-            IEnumerable<string> enumButtonChars_2 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_2 = enumButtonChars_2.ToString();
+            string buttonChars_2 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[1]).Value;
 
             string combination = string.Empty;
 
-            foreach (var item1 in buttonChars_1)
+            foreach (char item1 in buttonChars_1)
             {
                 combination += item1;
 
-                foreach (var item2 in buttonChars_2)
+                foreach (char item2 in buttonChars_2)
                 {
                     combination += item2;
 
                     combinationsList.Add(combination);
 
-                    combination.Remove(1);
+                    combination = combination.Remove(1);
                 }
 
-                combination.Remove(0);
+                combination = combination.Remove(0);
             }
 
             return combinationsList;
@@ -103,37 +99,34 @@ namespace ScratchPad.LeetCode
         {
             IList<string> combinationsList = new List<string>();
 
-            IEnumerable<string> enumButtonChars_1 = from keyValue in phoneButtons where keyValue.Key == digits[0] select keyValue.Value;
-            string buttonChars_1 = enumButtonChars_1.ToString();
+            string buttonChars_1 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[0]).Value;
 
-            IEnumerable<string> enumButtonChars_2 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_2 = enumButtonChars_2.ToString();
+            string buttonChars_2 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[1]).Value;
 
-            IEnumerable<string> enumButtonChars_3 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_3 = enumButtonChars_3.ToString();
+            string buttonChars_3 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[2]).Value;
 
 
             string combination = string.Empty;
 
-            foreach (var item1 in buttonChars_1)
+            foreach (char item1 in buttonChars_1)
             {
                 combination += item1;
 
-                foreach (var item2 in buttonChars_2)
+                foreach (char item2 in buttonChars_2)
                 {
                     combination += item2;
 
-                    foreach (var item3 in buttonChars_3)
+                    foreach (char item3 in buttonChars_3)
                     {
                         combination += item3;
                         combinationsList.Add(combination);
-                        combination.Remove(2);
+                        combination = combination.Remove(2);
                     }
 
-                    combination.Remove(1);
+                    combination = combination.Remove(1);
                 }
 
-                combination.Remove(0);
+                combination = combination.Remove(0);
             }
 
             return combinationsList;
@@ -143,48 +136,47 @@ namespace ScratchPad.LeetCode
         {
             IList<string> combinationsList = new List<string>();
 
-            IEnumerable<string> enumButtonChars_1 = from keyValue in phoneButtons where keyValue.Key == digits[0] select keyValue.Value;
-            string buttonChars_1 = enumButtonChars_1.ToString();
+            string buttonChars_1 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[0]).Value;
 
-            IEnumerable<string> enumButtonChars_2 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_2 = enumButtonChars_2.ToString();
+            string buttonChars_2 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[1]).Value;
 
-            IEnumerable<string> enumButtonChars_3 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_3 = enumButtonChars_3.ToString();
+            string buttonChars_3 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[2]).Value;
 
-            IEnumerable<string> enumButtonChars_4 = from keyValue in phoneButtons where keyValue.Key == digits[1] select keyValue.Value;
-            string buttonChars_4 = enumButtonChars_4.ToString();
+            string buttonChars_4 = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[3]).Value;
+
+
 
             string combination = string.Empty;
 
 
-
-            foreach (var item1 in buttonChars_1)
+            foreach (char item1 in buttonChars_1)
             {
                 combination += item1;
 
-                foreach (var item2 in buttonChars_2)
+                foreach (char item2 in buttonChars_2)
                 {
                     combination += item2;
 
-                    foreach (var item3 in buttonChars_3)
+                    foreach (char item3 in buttonChars_3)
                     {
                         combination += item3;
 
-                        foreach (var item4 in buttonChars_3)
+                        foreach (char item4 in buttonChars_3)
                         {
                             combination += item4;
                             combinationsList.Add(combination);
-
+                            combination = combination.Remove(3);
                         }
-                        combination.Remove(2);
+                        combination = combination.Remove(2);
                     }
 
-                    combination.Remove(1);
+                    combination = combination.Remove(1);
                 }
 
-                combination.Remove(0);
+                combination = combination.Remove(0);
             }
+
+         
 
             return combinationsList;
 

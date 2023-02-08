@@ -36,7 +36,15 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            UI_Main.MainMenu();
+            // UI_Main.MainMenu();
+
+            LetterCombos combos= new LetterCombos();
+            IList <string> stringList = combos.GetLetterCombinations("256");
+
+            foreach (string str in stringList)
+            {
+                Console.Write($"{str}, ");
+            }
 
         }
         }
