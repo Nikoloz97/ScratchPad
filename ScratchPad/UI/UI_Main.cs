@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScratchPad
+namespace ScratchPad.UI
 {
     public class UI_Main
     {

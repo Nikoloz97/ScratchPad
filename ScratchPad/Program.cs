@@ -1,6 +1,7 @@
 ﻿using ScratchPad.Karvonen;
 using ScratchPad.LeetCode;
 using ScratchPad.NBATrivia;
+using ScratchPad.UI;
 using ScratchPad.WebGen;
 using System;
 // Allows you to create lists/arrays
@@ -36,8 +37,11 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            UI_Main.MainMenu();
+            // UI_Main.MainMenu();
 
+            Misc misc = new Misc();
+
+            misc.PrintStudents();
 
         }
         }

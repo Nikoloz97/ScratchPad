@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ScratchPad
+namespace ScratchPad.UI
 {
     public class UI_Helper
     {
@@ -12,24 +12,24 @@ namespace ScratchPad
 
             while (true)
             {
-            if (userInput == null)
-            {
-                Console.WriteLine("You didn't put in anything. Try again");
-            }
-            else if (!isParsed)
-            {
-                Console.WriteLine("Input was not a number. Try again");
-            }
-            else if (result <= 0)
-            {
-                Console.WriteLine("Input was too low. Try again");
-            }
-            else if (result > UpperRangeInclusive)
-            {
-                Console.WriteLine("Input was too high. Try again");
+                if (userInput == null)
+                {
+                    Console.WriteLine("You didn't put in anything. Try again");
+                }
+                else if (!isParsed)
+                {
+                    Console.WriteLine("Input was not a number. Try again");
+                }
+                else if (result <= 0)
+                {
+                    Console.WriteLine("Input was too low. Try again");
+                }
+                else if (result > UpperRangeInclusive)
+                {
+                    Console.WriteLine("Input was too high. Try again");
 
-            }
-            else { return result; }
+                }
+                else { return result; }
 
             }
 
@@ -48,7 +48,7 @@ namespace ScratchPad
                     Console.WriteLine("You didn't put in anything. Try again");
                 }
 
-                else if (userInput == String.Empty)
+                else if (userInput == string.Empty)
                 {
                     Console.WriteLine("You actually didn't put in anything. Try again");
                 }

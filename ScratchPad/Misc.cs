@@ -1,13 +1,12 @@
-﻿using System;
+﻿using ScratchPad.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ScratchPad
 {
-    // Miscellanous stuff
-
-
-    internal class Misc
+    // Learning random stuff
+    public class Misc
     {
         public static void FizzBuzzFunction(int valueInput)
         {
@@ -148,6 +147,22 @@ namespace ScratchPad
             }
             return Value + SumRange(Value - 1);
         }
+
+
+        // IComparable/IComparer
+
+        public void PrintStudents()
+        {
+            Students students = new Students();
+
+            foreach (Student stu in students.StudentsList)
+            {
+                Console.WriteLine(stu.Id + " " + stu.FirstName + " " + stu.LastName + " " + stu.Score);
+
+            }
+
+        }
+
 
 
     }
