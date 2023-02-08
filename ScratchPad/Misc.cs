@@ -1,6 +1,7 @@
 ﻿using ScratchPad.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace ScratchPad
@@ -149,15 +150,19 @@ namespace ScratchPad
         }
 
 
-        // IComparable/IComparer
-
+        // IComparable = used if have access to each item (i.e. Student Model)
         public void PrintStudents()
         {
             Students students = new Students();
 
             List<Student> studentsList = students.StudentsList;
 
+            // Sorts based on score (see Student model)
             studentsList.Sort();
+
+            // Sorts based on Id (see CompareStudents class on obttom of page)
+            CompareStudents basedOnId = new CompareStudents();
+            studentsList.Sort(basedOnId);
 
             foreach (Student stu in studentsList)
             {
@@ -165,6 +170,22 @@ namespace ScratchPad
 
             }
 
+        }
+
+
+
+    }
+
+    // IComparer = used when don't have access the each item (i.e. Student Model)
+    public class CompareStudents : IComparer<Student>
+    {
+
+        public int Compare([AllowNull] Student x, [AllowNull] Student y)
+        {
+            // Sort based on ID
+            if (x.Id > y.Id) { return 1; }
+            else if (x.Id < y.Id) { return -1; }
+            else { return 0; }
         }
 
 
