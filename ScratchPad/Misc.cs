@@ -155,7 +155,11 @@ namespace ScratchPad
         {
             Students students = new Students();
 
-            foreach (Student stu in students.StudentsList)
+            List<Student> studentsList = students.StudentsList;
+
+            studentsList.Sort();
+
+            foreach (Student stu in studentsList)
             {
                 Console.WriteLine(stu.Id + " " + stu.FirstName + " " + stu.LastName + " " + stu.Score);
 
