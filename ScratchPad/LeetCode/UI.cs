@@ -51,7 +51,7 @@ namespace ScratchPad.LeetCode
                     break;
                 case 7:
                     Console.Clear();
-
+                    LetterCombos.Run();
                     break;
             }
 

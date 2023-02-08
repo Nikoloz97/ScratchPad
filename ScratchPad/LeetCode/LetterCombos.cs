@@ -12,7 +12,7 @@ namespace ScratchPad.LeetCode
         // https://leetcode.com/problems/letter-combinations-of-a-phone-number/
         // Constraint = digits.Length = 0 - 4 
 
-        Dictionary<char, string> phoneButtons = new Dictionary<char, string>()
+        public static readonly Dictionary<char, string> phoneButtons = new Dictionary<char, string>()
         {
             {'2', "abc" },
             {'3', "def" },
@@ -25,7 +25,32 @@ namespace ScratchPad.LeetCode
 
         };
 
-        public IList<string> GetLetterCombinations(string digits) 
+
+        public static void Run()
+        {
+            Console.WriteLine("Welcome to letter combos!");
+            Console.WriteLine("Where you can see combinations of letters from selecting up to 4 digits from old-style phones. Like this:");
+            foreach (var keyVal in phoneButtons)
+            {
+                Console.WriteLine($"{keyVal.Key} - {keyVal.Value}");
+            }
+
+            Console.WriteLine();
+            Console.Write("Input up to 4 digits: ");
+            string rawUserInput = Console.ReadLine();
+            
+            IList<string> combos = GetLetterCombinations(rawUserInput);
+
+            Console.Clear();
+
+            Console.WriteLine($"For {rawUserInput}, these are the possibilities: ");
+
+            foreach (string combo in combos) { 
+                Console.WriteLine(combo);
+            }
+        }
+
+        public static IList<string> GetLetterCombinations(string digits) 
         {
 
             switch (digits.Length)
@@ -51,21 +76,21 @@ namespace ScratchPad.LeetCode
 
 
 
-        public IList<String> CombListCreator_1(string digits)
+        public static IList<String> CombListCreator_1(string digits)
         {
             IList<string> combinationsList = new List<string>();
 
             string buttonChars = phoneButtons.FirstOrDefault(keyvalue => keyvalue.Key == digits[0]).Value;
 
-            foreach (char item in buttonChars)
+            foreach (char keyVal in buttonChars)
             {
-                combinationsList.Add(item.ToString());
+                combinationsList.Add(keyVal.ToString());
             }
             return combinationsList;
 
         }
 
-        public IList<String> CombListCreator_2(string digits)
+        public static IList<String> CombListCreator_2(string digits)
         {
             IList<string> combinationsList = new List<string>();
 
@@ -75,13 +100,13 @@ namespace ScratchPad.LeetCode
 
             string combination = string.Empty;
 
-            foreach (char item1 in buttonChars_1)
+            foreach (char keyVal1 in buttonChars_1)
             {
-                combination += item1;
+                combination += keyVal1;
 
-                foreach (char item2 in buttonChars_2)
+                foreach (char keyVal2 in buttonChars_2)
                 {
-                    combination += item2;
+                    combination += keyVal2;
 
                     combinationsList.Add(combination);
 
@@ -95,7 +120,7 @@ namespace ScratchPad.LeetCode
 
         }
 
-        public IList<String> CombListCreator_3(string digits)
+        public static IList<String> CombListCreator_3(string digits)
         {
             IList<string> combinationsList = new List<string>();
 
@@ -108,17 +133,17 @@ namespace ScratchPad.LeetCode
 
             string combination = string.Empty;
 
-            foreach (char item1 in buttonChars_1)
+            foreach (char keyVal1 in buttonChars_1)
             {
-                combination += item1;
+                combination += keyVal1;
 
-                foreach (char item2 in buttonChars_2)
+                foreach (char keyVal2 in buttonChars_2)
                 {
-                    combination += item2;
+                    combination += keyVal2;
 
-                    foreach (char item3 in buttonChars_3)
+                    foreach (char keyVal3 in buttonChars_3)
                     {
-                        combination += item3;
+                        combination += keyVal3;
                         combinationsList.Add(combination);
                         combination = combination.Remove(2);
                     }
@@ -132,7 +157,7 @@ namespace ScratchPad.LeetCode
             return combinationsList;
         }
 
-        public IList<String> CombListCreator_4(string digits)
+        public static IList<String> CombListCreator_4(string digits)
         {
             IList<string> combinationsList = new List<string>();
 
@@ -149,21 +174,21 @@ namespace ScratchPad.LeetCode
             string combination = string.Empty;
 
 
-            foreach (char item1 in buttonChars_1)
+            foreach (char keyVal1 in buttonChars_1)
             {
-                combination += item1;
+                combination += keyVal1;
 
-                foreach (char item2 in buttonChars_2)
+                foreach (char keyVal2 in buttonChars_2)
                 {
-                    combination += item2;
+                    combination += keyVal2;
 
-                    foreach (char item3 in buttonChars_3)
+                    foreach (char keyVal3 in buttonChars_3)
                     {
-                        combination += item3;
+                        combination += keyVal3;
 
-                        foreach (char item4 in buttonChars_3)
+                        foreach (char keyVal4 in buttonChars_3)
                         {
-                            combination += item4;
+                            combination += keyVal4;
                             combinationsList.Add(combination);
                             combination = combination.Remove(3);
                         }
