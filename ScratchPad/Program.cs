@@ -39,9 +39,6 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-            int index = PivotIndex.FindPivotIndex(new int[] { 2, 1, -1 });
-
-            Console.WriteLine(index);
 
         }
         }

@@ -31,18 +31,31 @@ namespace ScratchPad.LeetCode
             List<char> OpeningList = ParenthesisList.Select(parenthesis => parenthesis.Opening).ToList();
             List<char> ClosingList = ParenthesisList.Select(parenthesis => parenthesis.Closing).ToList();
 
+
+            if (!OpeningList.Contains(s[0]) || s.Length % 2 !=0)
+            {
+                return false;
+            }
+
             for (int i = 0; i < s.Length; i++)
             {
+
                 if (OpeningList.Contains(s[i]))
                 {
                     if (ClosingList.Contains(s[i+1]) && (OpeningList.IndexOf(s[i]) == ClosingList.IndexOf(s[i+1])))
                     {
-                        return true;
+                        i++;
                     }
+                    else { return false; }
 
                 }
+                else
+                {
+                    return false;
+                }
+
             }
-            return false;
+            return true;
             
 
 
