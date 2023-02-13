@@ -60,7 +60,7 @@ namespace ScratchPad.LeetCode
 
                 if (i + substringLength >= s.Length)
                 {
-                    substringLength = s.Length - 1;
+                    substringLength = s.Length - i;
                 }
 
                 string possiblePalindrome = s.Substring(i, substringLength);
@@ -83,7 +83,8 @@ namespace ScratchPad.LeetCode
 
             while (SubstringLength < s.Length)
             {
-                Iterator(s, SubstringLength);
+                List<string> palindromes = Iterator(s, SubstringLength);
+                palindromeList.Add(palindromes);
                 SubstringLength++;
             }
          
