@@ -39,9 +39,19 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-            TreeNode tree = new TreeNode(10);
+           Palindrome pali = new Palindrome();
 
-        
+            IList<IList<string>> ListOfPalindromeList = pali.Partition("aab");
+
+            foreach (IList<string> PalindromeList in ListOfPalindromeList)
+            {
+                foreach (string palindrome in PalindromeList)
+                {
+                    Console.WriteLine(palindrome);
+                }
+
+
+            }
 
 
         }
