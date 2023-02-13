@@ -39,6 +39,13 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
+            List<String> combos = LetterCombos.CombListCreator("23");
+
+            foreach (string item in combos)
+            {
+                Console.WriteLine(item);
+            }
+
 
         }
         }

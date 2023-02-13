@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace ScratchPad.LeetCode
 {
-    public class LetterCombos
+    public static class LetterCombos
     {
         // https://leetcode.com/problems/letter-combinations-of-a-phone-number/
         // Constraint = digits.Length = 0 - 4 
@@ -157,6 +157,12 @@ namespace ScratchPad.LeetCode
             return combinationsList;
         }
 
+
+
+       
+
+
+
         public static IList<String> CombListCreator_4(string digits)
         {
             IList<string> combinationsList = new List<string>();
@@ -205,6 +211,57 @@ namespace ScratchPad.LeetCode
 
             return combinationsList;
 
+        }
+
+
+
+        // Recursion version
+
+        public static void DictionaryAdder(Dictionary<char, string> buttonList, char digit)
+        {
+            KeyValuePair<char, string> button = phoneButtons.FirstOrDefault(keyVal => keyVal.Key == digit);
+
+            buttonList.Add(button.Key, button.Value);
+
+        }
+
+
+        // Left off here... 
+        public static void ForEachEmbedder(string buttonLetters, int inputLength, string combination, List<string> combinationsList, int counter = 0)
+        {
+            foreach (char letter in buttonLetters)
+            {
+                counter++;
+                combination += letter;
+                if (counter == inputLength)
+                {
+                    combinationsList.Add(combination);
+                }
+                else { ForEachEmbedder(buttonLetters, inputLength, combination, combinationsList, counter); }
+            }
+
+        }
+
+
+        public static List<String> CombListCreator(string digits)
+        {
+            List<string> combinationsList = new List<string>();
+
+            Dictionary<char, string> buttonDict = new Dictionary<char, string>();
+
+            for (int i = 0; i < digits.Length; i++)
+            {
+                DictionaryAdder(buttonDict, digits[i]);
+            }
+
+            string combination = string.Empty;
+
+
+            ForEachEmbedder(buttonDict.ElementAt(i).Value, digits.Length, combination, combinationsList);
+
+
+
+            return combinationsList;
         }
     }
 }
