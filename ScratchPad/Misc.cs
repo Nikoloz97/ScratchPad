@@ -63,6 +63,7 @@ namespace ScratchPad
         }
 
         // Below = recursion
+        // Also, check out BinaryTree.cs (LeetCode) 
 
         /// <summary>
         /// Method <c>Factorial</c> returns a a factorial given a number <br/>

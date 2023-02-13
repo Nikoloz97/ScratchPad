@@ -249,15 +249,18 @@ namespace ScratchPad.LeetCode
 
             Dictionary<char, string> buttonDict = new Dictionary<char, string>();
 
+            string combination = string.Empty;
+
             for (int i = 0; i < digits.Length; i++)
             {
                 DictionaryAdder(buttonDict, digits[i]);
+                ForEachEmbedder(buttonDict.ElementAt(i).Value, digits.Length, combination, combinationsList);
             }
 
-            string combination = string.Empty;
+           
 
 
-            ForEachEmbedder(buttonDict.ElementAt(i).Value, digits.Length, combination, combinationsList);
+           
 
 
 

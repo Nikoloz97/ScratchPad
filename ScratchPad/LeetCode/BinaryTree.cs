@@ -32,7 +32,9 @@ namespace ScratchPad.LeetCode
     }
     public class TreeNode
     {
+      // val = parent node
       public int val;
+        // I guess these are embedded classes (you can say?)
       public TreeNode left;
       public TreeNode right;
 
@@ -51,39 +53,7 @@ namespace ScratchPad.LeetCode
         }
 
 
-        // Adding new values to tree = via insert
-        /*public void Insert(int newVal)
-        {
-            if (newVal <= val )
-            {
-                // If there's nothing on the left child node... 
-                if (left == null)
-                {
-                    // Create a new node 
-                    left = new TreeNode(newVal);
-                }
-                else
-                {
-                    // Keep checking (recursion) 
-                    left.Insert(newVal);
-                }
-
-            }
-            else
-            {
-                if (right == null)
-                {
-                    right = new TreeNode(newVal);
-                }
-                else
-                {
-                    right.Insert(newVal);
-                }
-            }
-        }*/
-
-
-        // Goal = Insert new value into node tree where...
+        // Insert new value into node tree where...
             // Left side = lower than parent
             // Right side = higher than parent
         public void Insert(int newVal)
@@ -92,7 +62,7 @@ namespace ScratchPad.LeetCode
             {
                 if (left != null)
                 {
-                    // Keep going
+                    // Keep checking on left
                     left.Insert(newVal);
                 }
                 else
@@ -112,6 +82,72 @@ namespace ScratchPad.LeetCode
                 }
             }
         }
+
+        // Check if node tree contains the data
+        public Boolean Contains(int newVal)
+        {
+            // val = parent node
+            if (newVal == val)
+            {
+                return true;
+            }
+            else if (newVal < val)
+            {
+                if (left == null)
+                {
+                    return false;
+                }
+                // Progress to left child node. Do the same thing
+                else
+                {
+                    left.Contains(newVal);
+                }
+
+            }
+            else
+            {
+                if (right == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    // Progress to right child node. Do the same thing
+                    right.Contains(newVal);
+                }
+            }
+
+            // Just to satisfy function (not all codes return a value) 
+            return true;
+
+        }
+
+        // Prints words InOrder traversal (starting from very end of left branch: left node, parent, right node)
+        // Watch video at 8:10
+        // Paste these values into program.cs: 
+        // TreeNode tree = new TreeNode(10);
+        //tree.Insert(5);
+        //tree.Insert(8);
+        //tree.Insert(15);
+        //tree.PrintInOrderTraversal();
+        public void PrintInOrderTraversal()
+        {
+            if (left != null)
+            {
+                left.PrintInOrderTraversal();
+            }
+            Console.WriteLine(val);
+
+            if (right != null)
+            {
+                right.PrintInOrderTraversal();
+            }
+
+        }
+
+
+
+
 
 
 
