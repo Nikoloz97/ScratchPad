@@ -11,7 +11,7 @@ namespace ScratchPad.LeetCode
         {
 
 
-            // Indexes pattern:
+            // Indexes:
 
             // numRows 2
             // row1 = 0, 2, 4, 6, 8, 10, 12
@@ -35,8 +35,66 @@ namespace ScratchPad.LeetCode
             // Even indexes for each row = skip index of first row, increment index as you go down
 
 
+            string output = string.Empty;
+
+            string[] strings = new string[numRows];
+
+            int counter = 0;
+
+            bool firstCol = true;
 
 
+            while (counter <= s.Length - 1)
+            {
+                if (firstCol)
+                {
+                    for (int i = 0; i < numRows; i++)
+                    {
+                        strings[i] += s[counter];
+                        counter++;
+                        if (counter == s.Length)
+                        {
+                            break;
+                        }
+                    }
+                }
+                
+                firstCol= false;
+
+                for (int i = numRows - 2; i >= 0; i--)
+                {
+                    strings[i] += s[counter];
+                    counter++;
+                    if (counter == s.Length)
+                    {
+                        break;
+                    }
+                }
+
+                if (counter == s.Length)
+                {
+                    break;
+                }
+
+                for (int i = 1; i <= numRows - 1; i++)
+                {
+                    strings[i] += s[counter];
+                    counter++;
+                    if (counter == s.Length)
+                    {
+                        break;
+                    }
+
+                }
+            }
+
+            foreach (string item in strings)
+            {
+                output+= item;
+
+            }
+
+            return output;
 
         }
 

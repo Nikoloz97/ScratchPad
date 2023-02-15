@@ -39,19 +39,10 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-           Palindrome pali = new Palindrome();
-
-            IList<IList<string>> ListOfPalindromeList = pali.Partition("aab");
-
-            foreach (IList<string> PalindromeList in ListOfPalindromeList)
-            {
-                foreach (string palindrome in PalindromeList)
-                {
-                    Console.WriteLine(palindrome);
-                }
+           ZigZag zig = new ZigZag();
 
 
-            }
+            Console.WriteLine(zig.Convert("PAYPALISHIRING", 3));
 
 
         }
