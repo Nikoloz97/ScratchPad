@@ -39,6 +39,12 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
+            Isomorphic iso = new Isomorphic();
+
+
+
+            Console.WriteLine(iso.IsIsomorphic("ababab", "aaabbb"));
+
 
         }
         }
