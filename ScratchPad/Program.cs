@@ -39,11 +39,6 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-           ZigZag zig = new ZigZag();
-
-
-            Console.WriteLine(zig.Convert("PAYPALISHIRING", 3));
-
 
         }
         }
