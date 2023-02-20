@@ -20,21 +20,22 @@ namespace ScratchPad.LeetCode
 
         }
 
-        public void Helper(TreeNode root, List<int> res)
+        public void Helper(TreeNode root, List<int> result)
         {
             if (root != null)
             {
-                Helper(root.left, res);
-                res.Add(root.val);
-                Helper(root.right, res);
+                Helper(root.left, result);
+                result.Add(root.val);
+                Helper(root.right, result);
             }
         }
+
     }
     public class TreeNode
     {
       // val = parent node
       public int val;
-        // I guess these are embedded classes (you can say?)
+        // "Embedded class fields" (I made that term up) 
       public TreeNode left;
       public TreeNode right;
 
@@ -83,7 +84,7 @@ namespace ScratchPad.LeetCode
             }
         }
 
-        // Check if node tree contains the data
+        // Check if node tree contains a value
         public Boolean Contains(int newVal)
         {
             // val = parent node
@@ -144,6 +145,24 @@ namespace ScratchPad.LeetCode
             }
 
         }
+
+
+        public TreeNode InvertTree (TreeNode root)
+        {
+            if (root == null) { return root; }
+            InvertTree(root.left);
+            InvertTree(root.right);
+            var temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+
+            return root;
+        }
+
+
+
+
+
 
 
 

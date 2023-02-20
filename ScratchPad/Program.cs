@@ -39,11 +39,9 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-            Isomorphic iso = new Isomorphic();
+            LastWord last = new LastWord();
 
-
-
-            Console.WriteLine(iso.IsIsomorphic("ababab", "aaabbb"));
+            last.LengthOfLastWord("   fly me   to   the moon  ");
 
 
         }
