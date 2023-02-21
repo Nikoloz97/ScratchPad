@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ScratchPad.LeetCode
@@ -24,6 +25,12 @@ namespace ScratchPad.LeetCode
 
             return 0;
 
+        }
+
+        public int LengthOfLastWordV2(string s)
+        {
+            string[] sArray = s.Split(" ").Where(x => x.Length > 0).ToArray();
+            return sArray[^1].Length;
         }
 
     }

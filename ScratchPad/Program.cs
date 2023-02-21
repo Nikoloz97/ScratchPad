@@ -39,9 +39,11 @@ namespace ScratchPad
         {
             // UI_Main.MainMenu();
 
-            LastWord last = new LastWord();
+            Subsequence sub = new Subsequence();
 
-            last.LengthOfLastWord("   fly me   to   the moon  ");
+
+            Console.WriteLine(sub.IsSubsequence("aaaaaa", "bbaaaa"));
+            
 
 
         }
