@@ -37,17 +37,13 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            // UI_Main.MainMenu();
+            SingleNumb sing = new SingleNumb();
 
-            Subsequence sub = new Subsequence();
-
-
-            Console.WriteLine(sub.IsSubsequence("aaaaaa", "bbaaaa"));
-            
+            Console.WriteLine(sing.SingleNumber(new int[] { 2,3,4,5,2,3,7,4,5 }));
 
 
         }
-        }
+    }
 
 }
 
