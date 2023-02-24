@@ -37,9 +37,9 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            SingleNumb sing = new SingleNumb();
+           PascalTriangle pasc = new PascalTriangle();
 
-            Console.WriteLine(sing.SingleNumber(new int[] { 2,3,4,5,2,3,7,4,5 }));
+            pasc.Generate(5);
 
 
         }
