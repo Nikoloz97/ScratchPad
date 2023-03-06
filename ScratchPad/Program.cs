@@ -37,9 +37,9 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-           PascalTriangle pasc = new PascalTriangle();
-
-            pasc.Generate(5);
+           Plants plantfunc = new Plants();
+            Console.WriteLine(plantfunc.WateringPlants(new int[] { 3, 2, 4, 2, 1 }, 6));
+            
 
 
         }

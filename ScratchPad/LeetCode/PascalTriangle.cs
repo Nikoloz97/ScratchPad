@@ -13,7 +13,7 @@ namespace ScratchPad.LeetCode
             // Create list of lists
             IList<IList<int>> listOfRowInts = new List<IList<int>>();
 
-            // Create a RowIntsGenerator
+            // Create RowIntsGenerator
             for (int i = 1; i <= numRows; i++)
             {
                 listOfRowInts.Add(RowIntsGenerator(listOfRowInts, i));
