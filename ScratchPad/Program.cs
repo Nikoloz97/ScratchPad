@@ -37,9 +37,14 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-           Plants plantfunc = new Plants();
-            Console.WriteLine(plantfunc.WateringPlants(new int[] { 3, 2, 4, 2, 1 }, 6));
+           /*Plants plantfunc = new Plants();
+            Console.WriteLine(plantfunc.WateringPlants(new int[] { 3, 2, 4, 2, 1 }, 6));*/
             
+
+            MajorityElement majority = new MajorityElement();
+
+
+            Console.WriteLine(majority.Majority(new int[] { 2, 2, 1, 1, 1, 2, 2 }));
 
 
         }
