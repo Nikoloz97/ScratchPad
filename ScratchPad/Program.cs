@@ -37,9 +37,15 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-           Subarrays subarrays = new Subarrays();
+            MoveZeros zeroes = new MoveZeros();
 
-            Console.WriteLine(subarrays.SubarraysFunction(new int[] { 2, 1, 4, 3 }, 2, 3));
+            int[] modifiedArray = zeroes.MoveZeroes(new int[] { 0, 1, 0, 3, 12 });
+
+            foreach (int item in modifiedArray)
+            {
+                Console.WriteLine(item);
+            }
+            
 
         }
     }
