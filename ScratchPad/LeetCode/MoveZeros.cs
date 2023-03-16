@@ -8,7 +8,7 @@ namespace ScratchPad.LeetCode
     // https://leetcode.com/problems/move-zeroes/
     public class MoveZeros
     {
-        public int[] MoveZeroes(int[] nums)
+        public void MoveZeroes(int[] nums)
         {
             List<int> numsList = nums.ToList();
 
@@ -22,7 +22,10 @@ namespace ScratchPad.LeetCode
 
             }
 
-            return numsList.ToArray();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = numsList[i];
+            }
         }
 
 
