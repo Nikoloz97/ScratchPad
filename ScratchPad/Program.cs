@@ -37,16 +37,9 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            MoveZeros zeroes = new MoveZeros();
-
-            int[] modifiedArray = zeroes.MoveZeroes(new int[] { 0, 1, 0, 3, 12 });
-
-            foreach (int item in modifiedArray)
-            {
-                Console.WriteLine(item);
-            }
-            
-
+            Competition competition = new Competition();
+            competition.MinNumOfHours(5, 3, new int[] { 1, 4, 3,2}, new int[] { 2, 6, 3, 1 });
+           
         }
     }
 
