@@ -37,8 +37,8 @@ namespace ScratchPad
     {
          static void Main(string[] args)
         {
-            Competition competition = new Competition();
-            competition.MinNumOfHours(5, 3, new int[] { 1, 4, 3,2}, new int[] { 2, 6, 3, 1 });
+            UniqueSum unique = new UniqueSum();
+            Console.WriteLine(unique.SumOfUnique(new int[] { 2, 1, 2, 1, 3 }));
            
         }
     }
